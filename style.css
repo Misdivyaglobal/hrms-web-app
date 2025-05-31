@@ -1,0 +1,23 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+  padding: 2rem;
+  background: #f4f4f4;
+}
+
+.card {
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+  width: 300px;
+  margin: auto;
+  box-shadow: 0 2px 6px #aaa;
+}
+input {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  width: 90%;
+}
+button {
+  padding: 0.5rem;
+}
