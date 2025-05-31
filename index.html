@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="manifest" href="manifest.json" />
+  <title>HRMS Web App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>HRMS Dashboard</h1>
+  <div class="card">
+    <h2>Employee Management</h2>
+    <input type="text" id="name" placeholder="Enter Name" />
+    <input type="text" id="role" placeholder="Enter Role" />
+    <button onclick="addEmployee()">Add Employee</button>
+    <ul id="employeeList"></ul>
+  </div>
+
+  <script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("service-worker.js");
+  }
+</script>
+
+</body>
+</html>
