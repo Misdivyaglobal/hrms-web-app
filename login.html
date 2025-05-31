@@ -1,34 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Login - HRMS</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    body { display: flex; justify-content: center; align-items: center; height: 100vh; background: #f5f5f5; font-family: sans-serif; }
-    .login-box { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px #ccc; width: 300px; }
-    .login-box h2 { text-align: center; margin-bottom: 20px; }
-    .login-box input { width: 100%; margin-bottom: 15px; padding: 10px; }
-    .login-box button { width: 100%; padding: 10px; background: #007bff; color: white; border: none; border-radius: 4px; }
-    .error { color: red; font-size: 0.9em; text-align: center; }
-  </style>
- <script>
-    function login() {
-      const user = document.getElementById('username').value;
-      const pass = document.getElementById('password').value;
-      const errorDiv = document.getElementById('error');
-
-      if (user === 'admin' && pass === '1234') {
-        localStorage.setItem('loggedIn', 'true');
-        window.location.href = 'index.html';
-      } else {
-        errorDiv.textContent = 'Invalid credentials';
-      }
-    }
-
-    // If already logged in, skip login
-    if (localStorage.getItem('loggedIn') === 'true') {
-      window.location.href = 'index.html';
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HRMS Web App</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+  
+  <!-- Login check script -->
+  <script>
+    if (localStorage.getItem('loggedIn') !== 'true') {
+      window.location.href = 'login.html';
     }
   </script>
 </head>
