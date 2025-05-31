@@ -51,6 +51,10 @@
         alert('Please enter both name and role');
       }
     }
+function logout() {
+    localStorage.removeItem('loggedIn');
+    window.location.href = 'login.html';
+  }
   </script>
 </head>
 <body>
@@ -61,6 +65,7 @@
     <input type="text" id="empName" placeholder="Enter Name" />
     <input type="text" id="empRole" placeholder="Enter Role" />
     <button onclick="addEmployee()">Add Employee</button>
+<button onclick="logout()">Logout</button>
   </div>
 
   <br/><br/>
