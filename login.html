@@ -12,6 +12,10 @@
     if (localStorage.getItem('loggedIn') !== 'true') {
       window.location.href = 'login.html';
     }
+function logout() {
+    localStorage.removeItem('loggedIn');
+    window.location.href = 'login.html';
+  }
   </script>
 </head>
 <body>
@@ -21,6 +25,7 @@
     <input type="password" id="password" placeholder="Password" />
     <div class="error" id="error"></div>
     <button onclick="login()">Login</button>
+    <button onclick="logout()">Logout</button>
   </div>
 
   
