@@ -3,26 +3,67 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="manifest" href="manifest.json" />
-  <title>HRMS Web App</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>HRMS Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f3f3;
+      text-align: center;
+      padding: 50px;
+    }
+    .card {
+      display: inline-block;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    input {
+      display: block;
+      margin: 15px auto;
+      padding: 10px;
+      width: 80%;
+    }
+    button {
+      padding: 10px 20px;
+      margin-top: 15px;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    // Protect page: redirect to login if not logged in
+    if (localStorage.getItem('loggedIn') !== 'true') {
+      window.location.href = 'login.html';
+    }
+
+    function logout() {
+      localStorage.removeItem('loggedIn');
+      window.location.href = 'login.html';
+    }
+
+    function addEmployee() {
+      const name = document.getElementById('empName').value;
+      const role = document.getElementById('empRole').value;
+      if (name && role) {
+        alert(`Employee ${name} added as ${role}`);
+        // Add your data handling code here (e.g., send to backend or localStorage)
+      } else {
+        alert('Please enter both name and role');
+      }
+    }
+  </script>
 </head>
 <body>
   <h1>HRMS Dashboard</h1>
+
   <div class="card">
     <h2>Employee Management</h2>
-    <input type="text" id="name" placeholder="Enter Name" />
-    <input type="text" id="role" placeholder="Enter Role" />
+    <input type="text" id="empName" placeholder="Enter Name" />
+    <input type="text" id="empRole" placeholder="Enter Role" />
     <button onclick="addEmployee()">Add Employee</button>
-    <ul id="employeeList"></ul>
   </div>
 
-  <script>
-  if (localStorage.getItem('loggedIn') !== 'true') {
-    window.location.href = 'login.html';
-  }
-</script>
-
-
+  <br/><br/>
+  <button onclick="logout()">Logout</button>
 </body>
 </html>
